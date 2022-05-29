@@ -13,8 +13,10 @@ run pip install -r requirements.txt inside \Attendance-System-Using-Face-Recogni
 
 Run python manage.py runserver inside \Attendance-System-Using-Face-Recognition directory to run the project
 
-To login on admin portal use credentials given below:
+To login as admin on admin portal use credentials given below:
 
 Username: harsha
 
 Password: harsha@1
+
+Training and add photos can take time of 3-4 min so please wait for completing the process
