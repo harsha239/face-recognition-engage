@@ -1,0 +1,153 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+
+   <style>
+    body{
+      background: url('{% static "recognition/img/bg_image.png"%}') no-repeat center center fixed;
+      background-size: cover;
+      
+    }
+    h4{
+      margin-bottom: 10px;
+      padding-top: 10px;
+      color: rgb(6, 15, 15);
+      font-family: 'Ubuntu', sans-serif;
+
+
+    }
+    img{
+      border-radius:50%;
+      -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
+    }
+    img:hover{
+      -webkit-box-shadow: 2px 2px 21px 0px rgba(0, 3, 0, 0.91);
+      -moz-box-shadow:    2px 2px 21px 0px rgba(0, 3, 0, 0.91);
+      box-shadow:         2px 2px 21px 0px rgba(0, 3, 0, 0.91);
+      border:2px solid #fff;
+    }
+    h3{
+      margin-bottom: 1.3em;
+      font-family: 'Ubuntu', sans-serif;
+
+    }
+    a{
+      color: rgb(55, 204, 214);
+      font-family: 'Ubuntu', sans-serif;
+      background: rgba(0,0,0,0.6);
+     
+      border-radius:10px;
+      -webkit-box-shadow: 2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+-moz-box-shadow:    2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+box-shadow:         2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+    }
+    a:hover{
+      color:white !important;
+      text-decoration: none;
+      
+    }
+    div{
+          padding-left:50px;
+          padding-right:50px
+        }
+        .shadow{
+          background: rgb(55, 204, 214);margin-top:3em;margin-left:10px;color:#fff;border-radius:10px;-webkit-box-shadow: 2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+          -moz-box-shadow:    2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+          box-shadow:         2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+          margin-bottom: 50px;
+        }
+        .shadow:hover{
+         background-color:  #fff;
+        }
+   
+    
+    </style>
+      
+   
+   
+
+<script  type='text/javascript'
+src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'>
+$(document).ready(function(){
+  $("#train").click(function(){
+    alert("Training begun. This may take upto 5 minutes. Please wait.");
+  });
+});
+</script>
+	
+</head>
+<body>
+  <h1  style="color:rgb(55, 204, 214); margin:10px; font-family: 'Ubuntu', sans-serif;
+  ">Welcome,admin.</h1>
+  <a href="{% url 'logout' %}"><h5 class="text-right"><i ></i> Logout</h5></a>
+
+
+   <div  style="background: rgba(0,0,0,0.6);margin-top:3em;margin-left:1em;color:#fff;border-radius:10px;-webkit-box-shadow: 2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+-moz-box-shadow:    2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+box-shadow:         2px 2px 15px 0px rgba(0, 3, 0, 0.7);">
+  
+     
+  
+<div class="row">
+           <div class="shadow" style="margin-right: 10px;">
+          <a href="{%url 'register' %}" ><img src="{% static 'recognition/img/register.png' %}" style="height: 100px;width: 100px;margin: 10px 10px 10px 10px;"> <h4 >Register new <br>member</h4></a>
+          
+        </div>
+          <div class="shadow" style="margin-right:100px;margin-left:350px">
+          <a href="{%url 'add-photos'%}"><img src="{% static 'recognition/img/addphotos.png' %}" style="height: 100px;width: 100px;margin: 10px 10px 10px 10px;"><h4 >Add Photos</h4></a>
+         <div> 
+        </div>
+      
+        </div>
+        <div class="shadow" style="margin-left: 20px;">
+          <a href="{%url 'train' %}" id="train" >  <img src="{% static 'recognition/img/train.jpeg' %}" style="height: 100px;width: 100px;margin: 10px 10px 10px 10px;"> <h4 style="margin-left: 30px;" >Train</h4></a>
+          
+        </div>
+        <div class="shadow" style="margin-left: 350px;">
+          <a href="{%url 'view-attendance-home' %}"> <img src="{% static 'recognition/img/reports.png' %}" style="height: 100px;width: 100px;margin: 10px 10px 10px 40px;"><h4 >View Attendance <br> Reports </h4></a>
+        </div>
+
+
+
+
+      </div>
+  <div class="row" >
+
+  
+
+       
+
+
+
+ {% if messages %}
+      {% for message in messages%}
+      <div class="alert alert-{{message.tags}}" > {{message}}
+      </div>
+      {%endfor %}
+
+    {%endif%}
+
+
+</div>
+
+
+
+
+</body>
+</html>

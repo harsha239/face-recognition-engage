@@ -1,0 +1,122 @@
+ {% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+
+
+    <style>
+      .navbar{
+        background-color: rgb(15, 13, 13) !important;
+        border: 3px solid rgb(15, 13, 13);
+        border-radius: 10px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+      a{
+        color:rgb(55, 204, 214) !important ;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      h2{
+        color:rgb(55, 204, 214) !important ;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      h5{
+        color: black !important;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      </style>
+	
+</head>
+ <body style=" background: url('{% static "recognition/img/bg_image.png"%}') no-repeat center center fixed;
+ background-size: cover;">
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{%url 'view-attendance-home' %}">Attendance Dashboard</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+     
+      <li class="nav-item active">
+        <a class="nav-link" href="{%url 'view-attendance-employee' %}">By Name</a>
+      </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="{% url 'view-attendance-date' %}">By Date</a>
+      </li>
+
+         <li class="nav-item active" style="padding-left: 800px">
+        <a class="nav-link" href="{% url 'dashboard' %}">Back </a>
+      </li>
+  
+    </ul>
+  </div>
+</nav>
+
+
+
+
+  <div class="card" style="margin-top: 5em;background: rgba(0,0,0,0.6);margin-top:6em;margin-left:1em; ; color:#fff;border-radius:10px;-webkit-box-shadow: 10px 2px 15px 10px rgba(0, 3, 0, 0.7);
+  -moz-box-shadow:    10px 2px 15px 10px rgba(0, 3, 0, 0.7);
+  box-shadow:         10px 2px 15px 10px rgba(0, 3, 0, 0.7); margin-top: 6em; margin-left: 6em; margin-right: 6em; margin-bottom: 2em;padding:20px 0 ;">
+    <div class="card-body">
+
+ 
+<h2> Present Data</h2>
+ 	<div class="row" style="margin-left: 12em">
+<div class="card" style="margin-top: 5em;background: rgba(179, 88, 88, 0.6);margin-top:6em;margin-left:1em;color:rgb(12, 22, 19);border-radius:10px;-webkit-box-shadow: 10px 2px 15px 10px rgba(16, 24, 16, 0.7);
+-moz-box-shadow:    10px 2px 15px 10px rgba(10, 19, 10, 0.7);
+box-shadow:         10px 2px 15px 10px rgba(29, 46, 29, 0.7); margin-top: 6em; ; margin-bottom: 2em;padding:20px 0 ;">
+  <div class="card-body" >
+    <h5 class="card-title"> <b>Total Number Of Members</b></h5>
+    
+    <p class="card-text" style="padding-top: 20px; font-size: 38px;"> <b>{{total_num_of_emp }}</b></p>
+   
+  </div>
+</div>
+<div class="card" style="margin-top: 0em;background: rgba(63, 230, 174, 0.6);margin-left:1em; ; color:rgb(17, 11, 11);border-radius:10px;-webkit-box-shadow: 10px 2px 15px 10px rgba(0, 3, 0, 0.7);
+-moz-box-shadow:    10px 2px 15px 10px rgba(0, 3, 0, 0.7);
+box-shadow:         10px 2px 15px 10px rgba(0, 3, 0, 0.7); margin-top: 6em; margin-left: 6em; margin-right: 6em; margin-bottom: 2em;padding:20px 0 ;">
+  <div class="card-body">
+    <h5 class="card-title"> <b> Members present today</b></h5>
+    
+    <p class="card-text" style="padding-top: 20px; font-size: 38px;"><b> {{emp_present_today }}</b></p>
+   
+   
+  </div>
+</div>
+
+</div>
+
+
+</div>
+</div>
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+ </body>
+ </html>
+
+ 
