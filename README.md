@@ -5,7 +5,7 @@ clone it on your computer
 
 make a separate python virtual environment or use the default one already installed on your machine
 
-Download this file https://drive.google.com/uc?export=download&id=1HzO-rnEqgkZ6tLt48yWhYgHk1_zOIYhf
+Download this file https://drive.google.com/file/d/1pnlpsKGglVkojbfM6sIf-7VYihLH7JIJ/view?usp=sharing
 
 put it inside \Attendance-System-Using-Face-Recognition\face_recognition_data directory
 
