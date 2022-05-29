@@ -7,7 +7,7 @@ make a separate python virtual environment or use the default one already instal
 
 Download this file https://drive.google.com/uc?export=download&id=1HzO-rnEqgkZ6tLt48yWhYgHk1_zOIYhf
 
-put it inside \attendance-tracker-main\face_recognition_data directory
+put it inside \Attendance-System-Using-Face-Recognition\face_recognition_data directory
 
 run pip install -r requirements.txt inside \attendance-tracker-main directory
 
